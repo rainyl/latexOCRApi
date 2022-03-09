@@ -2,7 +2,7 @@
 Description: Infer
 Author: Rainyl
 Date: 2022-03-02 11:50:26
-LastEditTime: 2022-03-09 10:20:22
+LastEditTime: 2022-03-09 11:18:10
 '''
 from typing import Union
 # from dataset.dataset import test_transform
@@ -48,7 +48,7 @@ def initialize(arguments=None):
     os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
     # args = CONFIG.copy()
-    print(CONFIG)
+    logging.debug(CONFIG)
     model = get_model(CONFIG)
     model.load_state_dict(
         torch.load(CONFIG.checkpoint, map_location=CONFIG.device)
@@ -92,7 +92,7 @@ def call_model(img: Image, model: Model, image_resizer: Model, tokenizer: PreTra
     else:
         img = np.array(pad(img).convert('RGB'))
         t = test_transform(image=img)['image'][:1].unsqueeze(0)
-    img.save("call_model_resized.png")
+    # img.save("call_model_resized.png")
     im = t.to(CONFIG.device)
 
     with torch.no_grad():

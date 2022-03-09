@@ -2,7 +2,7 @@
 Description: main
 Author: Rainyl
 Date: 2022-03-02 11:48:41
-LastEditTime: 2022-03-08 18:13:12
+LastEditTime: 2022-03-09 11:09:14
 '''
 import base64
 
@@ -31,7 +31,7 @@ async def predict(img: str = Form(...), user: str = Form(...), token: str = Form
         res["data"] = "Invalid user or token"
         return res
     image = Image.open(BytesIO(base64.b64decode(img)))
-    image.save('temp.png')
+    # image.save('temp.png')
     pred = inferer.infer(image)
     return pred
 
