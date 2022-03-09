@@ -1,0 +1,57 @@
+{
+    "batchsize": 10,
+    "backbone_layers": [
+        2,
+        3,
+        7
+    ],
+    "betas": [
+        0.9,
+        0.999
+    ],
+    "bos_token": 1,
+    "checkpoint": "checkpoints/weights.pth",
+    "ckpt_resize": "checkpoints/image_resizer.pth",
+    "channels": 1,
+    "device": "cpu",
+    "dim": 256,
+    "decoder_args": {
+        "attn_on_attn": true,
+        "cross_attend": true,
+        "ff_glu": true,
+        "rel_pos_bias": false,
+        "use_scalenorm": false
+    },
+    "eos_token": 2,
+    "encoder_depth": 4,
+    "epochs": 10,
+    "gamma": 0.9995,
+    "heads": 8,
+    "lr": 0.001,
+    "lr_step": 30,
+    "max_height": 192,
+    "min_height": 32,
+    "max_width": 672,
+    "min_width": 32,
+    "max_dimensions": [
+        672,
+        192
+    ],
+    "min_dimensions": [
+        32,
+        32
+    ],
+    "max_seq_len": 512,
+    "no_resize": false,
+    "num_tokens": 8000,
+    "num_layers": 4,
+    "optimizer": "Adam",
+    "patch_size": 16,
+    "pad": false,
+    "pad_token": 0,
+    "sample_freq": 3000,
+    "tokenizer": "dataset/tokenizer.json",
+    "temperature": 0.2,
+    "topn": 5,
+    "wandb": false
+}
